@@ -5,9 +5,9 @@ healthy and lesion models for learning based on the joint estimation of stochast
 Payam Piray (ppiray [at] princeton.edu)
 
 # reference
-please cite this paper if you use this code```
+please cite this paper if you use this code:
 Piray P and Daw ND, 'A model for learning based on the joint estimation of stochasticity and volatility', 2021, Nature Communications.
-```
+
 
 # description of the models
 This work addresses the problem of learning in noisy environments, in which the agent must draw inferences (e.g., about true reward rates) from observations (individual reward amounts) that are corrupted by two distinct sources of noise: process noise or volatility and observation noise or stochasticity. Volatility captures the speed by which the true value being estimated changes from trial to trial (modeled as Gaussian diffusion); stochasticity describes additional measurement noise in the observation of each outcome around its true value (modeled as Gaussian noise on each trial). The celebrated Kalman filter makes inference based on known value for both stochasticity and volatility, in which volatility and stochasticity have opposite effects on the learning rate (i.e. Kalman gain): whereas volatility increases the learning rate, stochasticity decreases the learning rate.
