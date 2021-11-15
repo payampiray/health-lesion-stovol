@@ -1,9 +1,6 @@
 # health-lesion-stovol
 healthy and lesion models for learning based on the joint estimation of stochasticity and volatility
 
-## author
-Payam Piray (ppiray [at] princeton.edu)
-
 ## reference
 please cite this paper if you use this code:
 Piray P and Daw ND, 'A model for learning based on the joint estimation of stochasticity and volatility', 2021, Nature Communications.
@@ -36,3 +33,6 @@ pandas (required for visualization in sim_example and sim_lesion_example)
 
 ### Other languages
 The MATLAB implementation of this code (based on MATLAB's Control System Toolbox) is also available: https://github.com/payampiray/stochasticity_volatility_learning
+
+## author
+Payam Piray (ppiray [at] princeton.edu)
