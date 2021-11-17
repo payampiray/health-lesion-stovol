@@ -32,7 +32,7 @@ seaborn (required for visualization in sim_example and sim_lesion_example)
 pandas (required for visualization in sim_example and sim_lesion_example)
 
 ### Other languages
-The MATLAB implementation of this code (based on MATLAB's Control System Toolbox) is also available: https://github.com/payampiray/stochasticity_volatility_learning
+The MATLAB implementation of the model is also available: https://github.com/payampiray/stochasticity_volatility_learning
 
 ## Author
 Payam Piray (ppiray [at] princeton.edu)
