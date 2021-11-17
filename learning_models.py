@@ -196,9 +196,9 @@ class LearningModel:
         state = np.zeros((initial_state.shape[0], num_observations))
         for t in range(num_observations):
             state[:, t] = pf.predict(parameters)
-            pf.correct(observations[t], [kalman_mean, kalman_var, parameters])
-            (kalman_mean, kalman_var, kalman_gain) = self.kalman_update(pf.particles, observations[t], kalman_mean,
-                                                                        kalman_var, parameters)
+            idx = pf.correct(observations[t], [kalman_mean, kalman_var, parameters])
+            (kalman_mean, kalman_var, kalman_gain) = self.kalman_update(pf.particles, observations[t], kalman_mean[idx],
+                                                                        kalman_var[idx], parameters)
             val[t] = pf.weights @ kalman_mean
             lr[t] = pf.weights @ kalman_gain
 
@@ -395,9 +395,9 @@ class LearningModelGaussian:
         state = np.zeros((initial_state.shape[0], num_observations))
         for t in range(num_observations):
             state[:, t] = pf.predict(parameters)
-            pf.correct(observations[t], [kalman_mean, kalman_var, parameters])
-            (kalman_mean, kalman_var, kalman_gain) = self.kalman_update(pf.particles, observations[t], kalman_mean,
-                                                                        kalman_var, parameters)
+            idx = pf.correct(observations[t], [kalman_mean, kalman_var, parameters])
+            (kalman_mean, kalman_var, kalman_gain) = self.kalman_update(pf.particles, observations[t], kalman_mean[idx],
+                                                                        kalman_var[idx], parameters)
             val[t] = pf.weights @ kalman_mean
             lr[t] = pf.weights @ kalman_gain
 

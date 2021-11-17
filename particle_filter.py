@@ -61,12 +61,14 @@ class ParticleFilter:
         N_eff = 1/np.sum(weights**2)
         resample_percent = 0.50
         Nt = resample_percent*self.num_particles
+        idx = np.arange(self.num_particles, dtype=int)
         if N_eff < Nt:
             idx = self.resampling_systematic(weights)
             weights = np.ones(self.num_particles)/self.num_particles
             particles = particles[:, idx]
         self.particles = particles
         self.weights = weights
+        return idx
 
     def filter(self, observations, variables):
         num_observations = len(observations)
